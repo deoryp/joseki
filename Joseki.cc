@@ -1,41 +1,23 @@
 #include <iostream>
+#include <list>
 #include <string>
 
-void print(int indent, std::string line) {
-  std::cout << std::string(indent, ' ') << line << std::endl;
-}
+#include "Node.h"
+#include "Processor.h"
+#include "Tokenizer.h"
+#include "StandardGameFile.h"
 
 int main() {
 
-  std::string node;
-  std::string line;
-  std::string sgf;
-  std::cout << "SGF: \n";
+//  std::list<joseki::Node> gameTree;
+  
+//  joseki::Node *current = NULL;
+//  std::list<joseki::Node>* currentSequence; //
 
-  int spacing = 0;
+  joseki::Processor processor;
+  joseki::Tokenizer tokenizer = joseki::Tokenizer(std::cin, &processor);
 
-  while(std::getline(std::cin, line)) {
-    sgf += line;
-    for (std::string::iterator it = line.begin(); it != line.end(); ++it) {
-      switch (*it){
-        case '(':
-          spacing += 1;
-          print(spacing, "Start variation.");
-          spacing += 1;
-          break;
-        case ')':
-          spacing -= 1;
-          print(spacing, "End variation.");
-          spacing -= 1;
-          break;
-        case ';':
-          print(spacing, "Node.");
-          break;
-      }
-    }
-  }
-
-  std::cout << sgf << std::endl;
+  tokenizer.Run();
 
   return 0;
 }

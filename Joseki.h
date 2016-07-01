@@ -53,6 +53,8 @@ Collection = GameTree { GameTree }
                 Text | Point  | Move | Stone)
 
 
+Collection = List<GameTree>
+GameTree = List<Node> + List<GameTree>
 
 
 http://www.red-bean.com/sgf/proplist_ff.html
