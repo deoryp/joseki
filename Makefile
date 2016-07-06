@@ -1,4 +1,4 @@
-OBJS = Node.o Processor.o Tokenizer.o
+OBJS = Node.o Processor.o Tokenizer.o Board.o
 CC = g++
 DEBUG = -g
 CFLAGS = -Wall -c $(DEBUG)
