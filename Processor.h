@@ -25,7 +25,7 @@ class Processor {
   void PropertyStart();
   void PropertyEnd();
   
-  void GetCollection(); // TODO
+  GameTree* GetCollection(); // TODO
   
  private:
   int indent_;

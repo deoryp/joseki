@@ -15,10 +15,23 @@ Property::Property(PropIdent i) : ident(i) {
 void Property::SetIdent(PropIdent i) {
   ident = i;
 }
+PropIdent Property::GetIdent() {
+  return ident;
+}
+
 
 void Property::AddValue(PropValue v) {
   value->push_back(v);
 }
+
+std::list<PropValue>::iterator Property::GetValues() {
+  return value->begin();
+}
+
+std::list<PropValue>::iterator Property::GetValuesEnd() {
+  return value->end();
+}
+
 
 std::string Property::ToString() {
   std::string out = ident;
@@ -33,6 +46,14 @@ Node::Node(int m) : move(m), properties(new std::list<Property>()) {
 
 void Node::AddProperty(Property* property) {
   properties->push_back(*property);
+}
+
+std::list<Property>::iterator Node::GetProperties() {
+  return properties->begin();
+}
+
+std::list<Property>::iterator Node::GetPropertiesEnd() {
+  return properties->end();
 }
 
 int Node::GetMove() {

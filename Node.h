@@ -15,7 +15,11 @@ class Property {
 
   std::string ToString();
   void SetIdent(PropIdent i);
+  PropIdent GetIdent();
+  
   void AddValue(PropValue v);
+  std::list<PropValue>::iterator GetValues();
+  std::list<PropValue>::iterator GetValuesEnd();
 
  private:
   PropIdent ident;
@@ -30,6 +34,8 @@ class Node {
   void AddProperty(Property* property);
   int GetMove();
 
+  std::list<Property>::iterator GetProperties();
+  std::list<Property>::iterator GetPropertiesEnd();
  private:
   int move;
   std::list<Property>* properties;

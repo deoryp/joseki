@@ -20,6 +20,12 @@ class Board {
 
   void SZ(int x, int y);
   
+  void AB(int x, int y);
+  void AB(std::string value);
+
+  void AW(int x, int y);
+  void AW(std::string value);
+  
   std::string ToString();
   
  private:

@@ -62,10 +62,9 @@ void Processor::NodeEnd() {
   currentNode_ = nullptr;
 }
 
-void Processor::GetCollection() {
-  
+GameTree* Processor::GetCollection() {
   print("\nResulting Tree: \n" + root_->ToString());
-  
+  return root_;
 }
 
 }

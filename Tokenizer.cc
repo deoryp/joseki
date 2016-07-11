@@ -8,7 +8,7 @@ namespace joseki {
 Tokenizer::Tokenizer(std::istream& stream, Processor* processor)
     : stream_(stream), processor_(processor) {}
 
-int Tokenizer::Run() {
+GameTree* Tokenizer::Run() {
   std::string line;
   std::string token;
   bool insideNode = false;
@@ -87,8 +87,7 @@ int Tokenizer::Run() {
       }
     }
   }
-  processor_->GetCollection();
-  return 0;
+  return processor_->GetCollection();
 }
 
 Tokenizer::~Tokenizer() {

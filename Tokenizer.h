@@ -6,12 +6,13 @@
 namespace joseki {
 
 class Processor;
+class GameTree;
 
 class Tokenizer {
  public:
   Tokenizer(std::istream& stream, joseki::Processor* processor);
   ~Tokenizer();
-  int Run();
+  GameTree* Run();
 
  private:
   std::istream& stream_;
